@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "634603474478",
+    "project_id": "r-cpmadproject",
+    "storage_bucket": "r-cpmadproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:634603474478:android:614c4fa8510390166a59bf",
+        "android_client_info": {
+          "package_name": "com.example.priya_m1_191698r_cpmadproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "634603474478-ukvq38072jh2llaj1cdrjt4dli5q5q22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtzcZtaHpysEyBrczYXeEJoqaLBdGGGMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "634603474478-ukvq38072jh2llaj1cdrjt4dli5q5q22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
