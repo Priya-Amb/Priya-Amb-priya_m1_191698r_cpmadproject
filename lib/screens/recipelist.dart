@@ -1,50 +1,131 @@
 
 import 'dart:ui';
-
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:priya_m1_191698r_cpmadproject/model/custom_slider.dart';
+import 'package:priya_m1_191698r_cpmadproject/model/cartController.dart';
+import 'package:priya_m1_191698r_cpmadproject/screens/cartPage.dart';
 
 class RecipeList extends StatefulWidget {
   @override
-  _RecipeListState createState() => new _RecipeListState();
+  _RecipeListState createState() =>  _RecipeListState();
 }
 
 class _RecipeListState extends State<RecipeList> {
-  int getColorHexFromStr(String colorStr) {
-    colorStr = "FF" + colorStr;
-    colorStr = colorStr.replaceAll("#", "");
-    int val = 0;
-    int len = colorStr.length;
-    for (int i = 0; i < len; i++) {
-      int hexDigit = colorStr.codeUnitAt(i);
-      if (hexDigit >= 48 && hexDigit <= 57) {
-        val += (hexDigit - 48) * (1 << (4 * (len - 1 - i)));
-      } else if (hexDigit >= 65 && hexDigit <= 70) {
-        // A..F
-        val += (hexDigit - 55) * (1 << (4 * (len - 1 - i)));
-      } else if (hexDigit >= 97 && hexDigit <= 102) {
-        // a..f
-        val += (hexDigit - 87) * (1 << (4 * (len - 1 - i)));
-      } else {
-        throw new FormatException("An error occurred when converting a color");
-      }
-    }
-    return val;
-  }
+  // int getColorHexFromStr(String colorStr) {
+  //   colorStr = "FF" + colorStr;
+  //   colorStr = colorStr.replaceAll("#", "");
+  //   int val = 0;
+  //   int len = colorStr.length;
+  //   for (int i = 0; i < len; i++) {
+  //     int hexDigit = colorStr.codeUnitAt(i);
+  //     if (hexDigit >= 48 && hexDigit <= 57) {
+  //       val += (hexDigit - 48) * (1 << (4 * (len - 1 - i)));
+  //     } else if (hexDigit >= 65 && hexDigit <= 70) {
+  //       // A..F
+  //       val += (hexDigit - 55) * (1 << (4 * (len - 1 - i)));
+  //     } else if (hexDigit >= 97 && hexDigit <= 102) {
+  //       // a..f
+  //       val += (hexDigit - 87) * (1 << (4 * (len - 1 - i)));
+  //     } else {
+  //       throw new FormatException("An error occurred when converting a color");
+  //     }
+  //   }
+  //   return val;
+  // }
+
+  
+  //  final _shoeName = [
+  //   'Kaptir Super',
+  //   'Ultra Boost',
+  //   'Ultra DNA',
+  //   'Air Force Flyknit',
+  //   'Pegasus Trail',
+  //   'React Infinity'
+  // ];
+
+  // final _shoePrice = [
+  //   '\$128.0',
+  //   '\$132.0',
+  //   '\$139.0',
+  //   '\$205.0',
+  //   '\$146.0',
+  //   '\$130.0'
+  // ];
 
   @override
+ var cartController = Get.put(CartController());
+
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: Column( 
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        actions: <Widget>[
+          Padding(padding: const EdgeInsets.all(10.0),
+          child: Container(
+            height: 150.0,
+            width: 30.0,
+            child: InkWell(
+              splashColor: Colors.redAccent,
+              highlightColor: Colors.blueAccent.withOpacity(0.5),
+              onTap: (){
+                 // Navigator.push(
+                  //context,
+                  //MaterialPageRoute(
+                  //builder: (context) => CartPage(),
+                  //),
+                //);
+                //Get.to(() => CartPage());
+              },
+              child: Stack(
+                children: <Widget>[
+                  IconButton(icon: Icon(Icons.filter_list,
+                  color: Colors.white,
+                  ),
+                  onPressed: null,
+                ),
+                Positioned(child: Stack(
+                  children: <Widget>[
+                  Icon(Icons.brightness_1,
+                  size: 20.0, color: Colors.red[700]),
+                Positioned(
+                  top: 3.0,
+                  right: 7.0,
+              child: Center(
+                  child: Obx(
+                  () => Text(
+                  cartController.count.toString(),
+                    textAlign: TextAlign.right,
+                      style: TextStyle(
+                      color: Colors.white,
+                       fontSize: 12.0,
+                       fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                            ),
+                  )
+                  ],
+                ))
+                ],),
+            ),
+            ),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+       child: Column( 
         children: <Widget>[
           Stack(
             children: <Widget>[
               Container(
-                height: 250.0,
+                height: 300.0,
                 color: Colors.black,
               ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
+                    width: 360,
                     padding: EdgeInsets.fromLTRB(15.0, 35.0, 15.0, 10.0),
                     child: Material(
                       elevation: 10.0,
@@ -56,13 +137,13 @@ class _RecipeListState extends State<RecipeList> {
                             contentPadding:
                                 EdgeInsets.only(left: 15.0, top: 15.0),
                             hintText: 'Search for recipes',
-                            hintStyle: TextStyle(color: Colors.grey)),
+                            hintStyle: TextStyle(color: Colors.grey)) ,
                       ),
                     ),
                   ),
-                  SizedBox(height: 15.0),
+                  SizedBox(height: 10.0),
                   Padding(
-                    padding: EdgeInsets.only(left: 15.0),
+                    padding: EdgeInsets.only(left: 20.0),
                     child: Container(
                       padding: EdgeInsets.only(left: 10.0),
                       decoration: BoxDecoration(
@@ -114,24 +195,91 @@ class _RecipeListState extends State<RecipeList> {
                         SizedBox(width: 10.0),
                       ],
                     ),
-                  )
+                  ),
+                    SizedBox(height: 10.0),
+                  CustomSliderWidget(
+                    items: [
+                      "images/1.png",
+                      "images/2.png",
+                      "images/3.png"
+                    ],
+                  ),
+      //  Expanded(child:  
+      // GridView.count(
+      //   crossAxisCount: 2,
+      //   children: List.generate(6,(index){
+      //     return InkWell(
+      //       splashColor: Colors.blueAccent,
+      //       highlightColor: Colors.blueAccent.withOpacity(1.0),
+      //       onTap: (){
+      //         cartController.addToCart(index);
+      //       },
+      //       child: _buildGridCards(index, 'images/shoe_${index + 1}.jpg', _shoeName[index], _shoePrice[index]),
+      //     );
+      //   }),
+      // ),
+    //),
                 ],
               )
             ],
           ),
         ],
       ),
+      ),
     );
   }
+
+  //   Widget _buildGridCards(int index, String imgPath, String shoeName, String shoePrice){
+  //   return Card(
+  //     color: Colors.lightBlueAccent[50],
+  //     elevation: 5,
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),
+  //   ),
+  //   child: Column(
+  //     children: [
+  //       Padding(
+  //         padding: const EdgeInsets.all(8.0),
+  //         child: Container(
+  //           height: 140,
+  //           width: 150,
+  //           decoration: BoxDecoration(
+  //             image: DecorationImage(
+  //               image: AssetImage(imgPath),
+  //               fit: BoxFit.fitWidth,
+  //             ),
+  //             borderRadius: BorderRadius.circular(12),
+  //           ),
+  //         ),
+  //       ),
+  //       Text(shoeName, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+  //       ),
+  //       Text(shoePrice, style: TextStyle(fontSize: 14.0),
+  //       ),
+  //     ],
+  //   ),
+  //   );
+  // }
 
   Widget _foodCard1() {
     return Container(
       height: 150.0,
       width: 290.0,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 3,
+             offset: Offset(5,5),
+          )
+        ],
         borderRadius: BorderRadius.circular(12.0),
         color: Colors.white,
+        border: Border.all(
+          color: Colors.grey[300],
+        )
       ),
+      
       child: Row(
         children: <Widget>[
           Container(
@@ -170,9 +318,20 @@ class _RecipeListState extends State<RecipeList> {
     return Container(
       height: 150.0,
       width: 290.0,
-      decoration: BoxDecoration(
+       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 3,
+             offset: Offset(5,5),
+          )
+        ],
         borderRadius: BorderRadius.circular(12.0),
         color: Colors.white,
+        border: Border.all(
+          color: Colors.grey[300],
+        )
       ),
       child: Row(
         children: <Widget>[
@@ -193,7 +352,7 @@ class _RecipeListState extends State<RecipeList> {
                 style: TextStyle(fontFamily: 'Basic Sans'),
               ),
               Text(
-                ' Bagels with Spread',
+                ' Sourdough',
                 style: TextStyle(fontFamily: 'Basic Sans'),
               ),
               SizedBox(height: 10.0),
@@ -213,8 +372,19 @@ class _RecipeListState extends State<RecipeList> {
       height: 150.0,
       width: 290.0,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 3,
+             offset: Offset(5,5),
+          )
+        ],
         borderRadius: BorderRadius.circular(12.0),
         color: Colors.white,
+        border: Border.all(
+          color: Colors.grey[300],
+        )
       ),
       child: Row(
         children: <Widget>[

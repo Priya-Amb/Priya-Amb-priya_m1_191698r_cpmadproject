@@ -19,6 +19,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
    // return GetMaterialApp(debugShowCheckedModeBanner: false, home: StartScreen());
-   return MaterialApp(debugShowCheckedModeBanner: false, home: StartScreen());
+   return GetMaterialApp(debugShowCheckedModeBanner: false, home: RecipeList());
   }
 }

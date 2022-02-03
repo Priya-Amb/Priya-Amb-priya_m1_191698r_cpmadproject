@@ -38,6 +38,7 @@ dependencies:
   firebase_core: ^0.5.0
   firebase_auth: ^0.18.0+1
   cloud_firestore: ^0.14.0
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +79,9 @@ flutter:
     - images/ColdChocoOatsWithNutsnBerries.jpg
     - images/VeganSalmonWithQuinaoSet .jpg
     - images/RiceNoodles withSweetStickySauce.jpg
+    - images/1.png
+    - images/2.png
+    - images/3.png
 
   #   - images/a_dot_ham.jpeg
 
