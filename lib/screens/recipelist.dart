@@ -35,83 +35,11 @@ class _RecipeListState extends State<RecipeList> {
   // }
 
   
-  //  final _shoeName = [
-  //   'Kaptir Super',
-  //   'Ultra Boost',
-  //   'Ultra DNA',
-  //   'Air Force Flyknit',
-  //   'Pegasus Trail',
-  //   'React Infinity'
-  // ];
-
-  // final _shoePrice = [
-  //   '\$128.0',
-  //   '\$132.0',
-  //   '\$139.0',
-  //   '\$205.0',
-  //   '\$146.0',
-  //   '\$130.0'
-  // ];
 
   @override
- var cartController = Get.put(CartController());
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        actions: <Widget>[
-          Padding(padding: const EdgeInsets.all(10.0),
-          child: Container(
-            height: 150.0,
-            width: 30.0,
-            child: InkWell(
-              splashColor: Colors.redAccent,
-              highlightColor: Colors.blueAccent.withOpacity(0.5),
-              onTap: (){
-                 // Navigator.push(
-                  //context,
-                  //MaterialPageRoute(
-                  //builder: (context) => CartPage(),
-                  //),
-                //);
-                //Get.to(() => CartPage());
-              },
-              child: Stack(
-                children: <Widget>[
-                  IconButton(icon: Icon(Icons.filter_list,
-                  color: Colors.white,
-                  ),
-                  onPressed: null,
-                ),
-                Positioned(child: Stack(
-                  children: <Widget>[
-                  Icon(Icons.brightness_1,
-                  size: 20.0, color: Colors.red[700]),
-                Positioned(
-                  top: 3.0,
-                  right: 7.0,
-              child: Center(
-                  child: Obx(
-                  () => Text(
-                  cartController.count.toString(),
-                    textAlign: TextAlign.right,
-                      style: TextStyle(
-                      color: Colors.white,
-                       fontSize: 12.0,
-                       fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                            ),
-                  )
-                  ],
-                ))
-                ],),
-            ),
-            ),
-          )
-        ],
-      ),
       body: SingleChildScrollView(
        child: Column( 
         children: <Widget>[
@@ -204,24 +132,73 @@ class _RecipeListState extends State<RecipeList> {
                       "images/3.png"
                     ],
                   ),
-      //  Expanded(child:  
-      // GridView.count(
-      //   crossAxisCount: 2,
-      //   children: List.generate(6,(index){
-      //     return InkWell(
-      //       splashColor: Colors.blueAccent,
-      //       highlightColor: Colors.blueAccent.withOpacity(1.0),
-      //       onTap: (){
-      //         cartController.addToCart(index);
-      //       },
-      //       child: _buildGridCards(index, 'images/shoe_${index + 1}.jpg', _shoeName[index], _shoePrice[index]),
-      //     );
-      //   }),
-      // ),
-    //),
+          SizedBox(height: 30,),
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+              //  builder: (_) => DetailPage()
+                ));
+            },
+                      child: Container(
+              width: double.infinity,
+              height: 150,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage("images/3.png"))
+              ),
+            ),
+          ),
+                   SizedBox(height: 20,),
+          Row(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                  width: (MediaQuery.of(context).size.width - 80) / 2,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(image: AssetImage("images/RiceNoodles withSweetStickySauce.jpg"),fit: BoxFit.cover)
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Container(
+                  width: (MediaQuery.of(context).size.width - 80) / 2,
+                  height: 230,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(image: AssetImage("images/AvocadoHummusDip.jpg"),fit: BoxFit.cover)
+                  ),
+                ),
+                ],
+              ),
+              SizedBox(width: 20,),
+              Column(
+                children: <Widget>[
+                  Container(
+                  width: (MediaQuery.of(context).size.width - 80) / 2,
+                  height: 230,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(image: AssetImage("images/VeganSalmonWithQuinaoSet .jpg"),fit: BoxFit.cover)
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Container(
+                  width: (MediaQuery.of(context).size.width - 80) / 2,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(image: AssetImage("images/DoubleChcocCake.jpg"),fit: BoxFit.cover)
+                  ),
+                ),
                 ],
               )
             ],
+          )
+       ],
+              )
+            ],
+            
           ),
         ],
       ),
@@ -229,36 +206,6 @@ class _RecipeListState extends State<RecipeList> {
     );
   }
 
-  //   Widget _buildGridCards(int index, String imgPath, String shoeName, String shoePrice){
-  //   return Card(
-  //     color: Colors.lightBlueAccent[50],
-  //     elevation: 5,
-  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),
-  //   ),
-  //   child: Column(
-  //     children: [
-  //       Padding(
-  //         padding: const EdgeInsets.all(8.0),
-  //         child: Container(
-  //           height: 140,
-  //           width: 150,
-  //           decoration: BoxDecoration(
-  //             image: DecorationImage(
-  //               image: AssetImage(imgPath),
-  //               fit: BoxFit.fitWidth,
-  //             ),
-  //             borderRadius: BorderRadius.circular(12),
-  //           ),
-  //         ),
-  //       ),
-  //       Text(shoeName, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-  //       ),
-  //       Text(shoePrice, style: TextStyle(fontSize: 14.0),
-  //       ),
-  //     ],
-  //   ),
-  //   );
-  // }
 
   Widget _foodCard1() {
     return Container(
