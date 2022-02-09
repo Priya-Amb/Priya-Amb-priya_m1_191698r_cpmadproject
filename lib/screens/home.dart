@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
     ShowReviews(),
     Profile(),
     About(),
+    Search(),
   ];
   @override
   Widget build(BuildContext context) {

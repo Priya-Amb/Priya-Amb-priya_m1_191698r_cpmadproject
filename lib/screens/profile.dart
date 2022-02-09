@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> {
           child: Padding(
             padding: const EdgeInsets.only(top: 50),
             child: Image.asset(
-              'images/MediFit.png',
+              'images/undraw_healthy_options.png',
               height: 150,
             ),
           ),
@@ -43,7 +43,7 @@ class _ProfileState extends State<Profile> {
                 hintText: 'Name',
                 enabledBorder: UnderlineInputBorder(
                     borderSide:
-                        new BorderSide(color: Colors.purpleAccent[100]))),
+                        new BorderSide(color: Colors.black))),
           ),
         ),
         SizedBox(
@@ -57,7 +57,7 @@ class _ProfileState extends State<Profile> {
                 hintText: 'Email',
                 enabledBorder: UnderlineInputBorder(
                     borderSide: new BorderSide(
-                  color: Colors.purpleAccent[100],
+                  color: Colors.black,
                 ))),
           ),
         ),
@@ -72,7 +72,7 @@ class _ProfileState extends State<Profile> {
                 hintText: 'Password',
                 enabledBorder: UnderlineInputBorder(
                     borderSide:
-                        new BorderSide(color: Colors.purpleAccent[100]))),
+                        new BorderSide(color: Colors.black))),
           ),
         ),
         SizedBox(
@@ -92,11 +92,11 @@ class _ProfileState extends State<Profile> {
               "Edit Now!",
               style: TextStyle(fontSize: 12, color: Colors.white),
             ),
-            color: Colors.deepPurpleAccent[100],
+            color: Colors.black,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.circular(2),
                 side: BorderSide(
-                  color: const Color(0xffe4dbea),
+                  color: Colors.black,
                 )),
           ),
         ),

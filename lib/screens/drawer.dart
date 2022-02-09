@@ -75,12 +75,12 @@ UserModel userData;
               onTap: ()=> widget.onTap(context,1,'Recipes'),
             ),
             ListTile(
-              leading: Icon(Icons.person),
+              leading: Icon(Icons.edit),
               title: Text('AddReviewPage'),
               onTap: ()=> widget.onTap(context,2,'AddReviewPage'),
             ),
             ListTile(
-              leading: Icon(Icons.person),
+              leading: Icon(Icons.pending),
               title: Text('ShowReviewPage'),
               onTap: ()=> widget.onTap(context,3,'ShowReviewPage'),
             ),
@@ -89,14 +89,21 @@ UserModel userData;
               color: Colors.deepPurple,
               ),
               title: Text('Profile'),
-              onTap: () => widget.onTap(context, 5, 'Profile'),
+              onTap: () => widget.onTap(context, 4, 'Profile'),
             ),
              ListTile(
               leading: Icon(Icons.home_repair_service,
               color: Colors.deepPurple,
               ),
               title: Text('About'),
-              onTap: () => widget.onTap(context, 4, 'About'),
+              onTap: () => widget.onTap(context, 5, 'About'),
+            ),
+            ListTile(
+              leading: Icon(Icons.search,
+              color: Colors.deepPurple,
+              ),
+              title: Text('Search'),
+              onTap: () => widget.onTap(context, 6, 'Search'),
             ),
            ListTile(
                 leading: Icon(Icons.exit_to_app,

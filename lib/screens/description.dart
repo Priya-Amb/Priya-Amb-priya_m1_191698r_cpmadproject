@@ -10,14 +10,17 @@ class DetailsPage extends StatefulWidget {
   State<DetailsPage> createState() => _DetailsPageState();
 }
 
+double _iconRating = 2;
+
+
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    // appBar: AppBar(
-    // backgroundColor: Colors.black,
-    // iconTheme: IconThemeData(color: Colors.white),
-    // ),
+    appBar: AppBar(
+    backgroundColor: Colors.black,
+    iconTheme: IconThemeData(color: Colors.white),
+    ),
     body: _buildBody(),
     );
   }
@@ -139,6 +142,8 @@ class _DetailsPageState extends State<DetailsPage> {
       ),
     );
   }
+
+
 
   // Row _favourites(){
   //   return Row(crossAxisAlignment: CrossAxisAlignment.start,

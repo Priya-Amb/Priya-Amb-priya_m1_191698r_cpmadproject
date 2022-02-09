@@ -17,23 +17,23 @@ class _AboutState extends State<About> {
         child: Padding(
           padding: const EdgeInsets.only(top: 50),
           child: Image.asset(
-            'images/MediFit.png',
+            'images/Logo.png',
             height: 150,
           ),
         ),
       ),
-      SizedBox(
-        height: 50,
-      ),
-      Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 30),
-          child: Image.asset(
-            'images/AboutUs.png',
-            height: 30,
-          ),
-        ),
-      ),
+      // SizedBox(
+      //   height: 50,
+      // ),
+      // Center(
+      //   child: Padding(
+      //     padding: const EdgeInsets.only(top: 30),
+      //     child: Image.asset(
+      //       'images/AboutUs.png',
+      //       height: 30,
+      //     ),
+      //   ),
+      // ),
       Padding(
         padding: const EdgeInsets.only(left: 16, top: 20),
         child: Text(

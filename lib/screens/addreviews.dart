@@ -35,7 +35,7 @@ class _AddReviewPageState extends State<AddReviewPage> {
                 ),
                 TextFormField(
                   keyboardType: TextInputType.text,
-                  decoration: InputDecoration(labelText: 'Book Title'),
+                  decoration: InputDecoration(labelText: 'Title'),
                   validator: (val) =>
                   val.length == 0 ? 'Enter Title': null,
                   onSaved: (val) => this.Title = val,
