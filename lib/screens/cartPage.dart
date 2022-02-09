@@ -13,6 +13,7 @@ class CartPage extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text('Shopping Cart'),
         actions: [
           Center(
@@ -38,11 +39,11 @@ class CartPage extends StatelessWidget{
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: 100,
-                  width: 90,
+                  height: 600,
+                  width: 50,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('images/shoe_${cartIndex + 1}.jpg'),
+                      image: AssetImage('assets/food_${cartIndex + 1}.jpg'),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.circular(5),
