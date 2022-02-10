@@ -150,7 +150,7 @@ class _RecipesState extends State<Recipes> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => Recipe1(
-                                    imageUrl: 'images/Sushi.jpg',
+                                    //imageUrl: 'images/ColdChocoOatsWithNutsnBerries.jpg',
                                   )),
                         );
                       },

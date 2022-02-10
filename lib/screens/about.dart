@@ -8,7 +8,10 @@ class About extends StatefulWidget {
 class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: layout(), backgroundColor: Colors.white);
+    return Scaffold( appBar: AppBar(
+    backgroundColor: Colors.black,
+    iconTheme: IconThemeData(color: Colors.white),
+    ),body: layout(), backgroundColor: Colors.white);
   }
 
   Widget layout() {
@@ -34,11 +37,22 @@ class _AboutState extends State<About> {
       //     ),
       //   ),
       // ),
-      Padding(
-        padding: const EdgeInsets.only(left: 16, top: 20),
-        child: Text(
-          "Featuring contributions from Specialist Doctors and Allied Health Professionals from across various health group. MediFit allows you to help promote fitness and manage medical appointments to residents in order to keep themselves fit and healthy and avoid too many app on the phone. Patients will enjoy the benefit of good treatment that focuses on quality of products as well as holistic care.",
-          style: TextStyle(fontSize: 12, color: Colors.deepPurple),
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16, top: 20),
+          child: Text(
+            "This application promotes all beings to have a healthier lifestyle by turning something boring and healthy vegetables into a craveable and mouthwatering dish.",
+            style: TextStyle(fontSize: 12, color: Colors.black),
+          ),
+        ),
+      ),
+       Center(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16, top: 20),
+          child: Text(
+            "For more inquires, please contact us at 6500 1234.",
+            style: TextStyle(fontSize: 12, color: Colors.black),
+          ),
         ),
       ),
     ]);

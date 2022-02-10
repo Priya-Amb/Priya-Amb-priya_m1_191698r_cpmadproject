@@ -1,5 +1,6 @@
 // main.dart
 import 'package:flutter/material.dart';
+import 'package:priya_m1_191698r_cpmadproject/screens/recipes1.dart';
 
 
 class Search extends StatefulWidget {
@@ -54,9 +55,6 @@ List<Image> images = [
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Kindacode.com'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -79,6 +77,13 @@ List<Image> images = [
                       color: Colors.amberAccent,
                       margin: const EdgeInsets.symmetric(vertical: 5),
                       child: ListTile(
+                        onTap: (){
+                          Navigator.push(
+                            context, MaterialPageRoute(
+                              builder: (context) => Recipe1()
+                            )
+                          );
+                        },
                         leading: Text(
                           _foundRecipes[index]["id"].toString(),
                           style:  const TextStyle(fontSize: 15),

@@ -14,6 +14,12 @@ double _iconRating = 2;
 
 
 class _DetailsPageState extends State<DetailsPage> {
+
+  double _rating;
+  int _ratingBarMode = 1;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +27,7 @@ class _DetailsPageState extends State<DetailsPage> {
     backgroundColor: Colors.black,
     iconTheme: IconThemeData(color: Colors.white),
     ),
+    //home: Builder(builder: (contextbuilder)
     body: _buildBody(),
     );
   }
@@ -34,8 +41,6 @@ class _DetailsPageState extends State<DetailsPage> {
       Divider(),
       _tag1(),
       _tag2(),
-      // Divider(),
-      // _favourites(),
       // Divider(),
       // _images(),
       ],),)
@@ -142,6 +147,7 @@ class _DetailsPageState extends State<DetailsPage> {
       ),
     );
   }
+  
 
 
 

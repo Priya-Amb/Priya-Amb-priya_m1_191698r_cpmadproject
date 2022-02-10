@@ -2,6 +2,7 @@ import 'package:priya_m1_191698r_cpmadproject/screens/about.dart';
 import 'package:priya_m1_191698r_cpmadproject/screens/foodlist.dart';
 import 'package:priya_m1_191698r_cpmadproject/screens/profile.dart';
 import 'package:priya_m1_191698r_cpmadproject/screens/recipelist.dart';
+import 'package:priya_m1_191698r_cpmadproject/screens/recipes.dart';
 import 'package:priya_m1_191698r_cpmadproject/screens/search.dart';
 import 'package:flutter/material.dart';
 
@@ -114,7 +115,7 @@ class _NavigationState extends State<Navigation> {
                   FloatingActionButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => RecipeList()
+                        builder: (context) => Recipes()
                       ));
                     },
                     mini: true,
