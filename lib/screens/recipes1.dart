@@ -39,7 +39,6 @@ import 'package:priya_m1_191698r_cpmadproject/services/firestore_service.dart';
 import 'package:priya_m1_191698r_cpmadproject/model/food_model.dart';
 import 'package:priya_m1_191698r_cpmadproject/model/recipe_model.dart';
 
-
 class Recipe1 extends StatefulWidget {
   @override
   State<Recipe1> createState() => _Recipe1State();
@@ -67,12 +66,13 @@ class _Recipe1State extends State<Recipe1> {
     SafeArea(
       child: Padding(padding: EdgeInsets.all(16.0),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[_nameInfo(),
+      children: <Widget>[
+      _nameInfo(),
       Divider(),
       _tag1(),
-      _tag2(),
+     // _tag2(),
       Divider(),
-      //_ingredients(),
+      _ingredients(),
       ],),)
     )
     ],),);
@@ -134,7 +134,8 @@ class _Recipe1State extends State<Recipe1> {
     //                   )
     //                 ],
     //               ),
-    Text('Perfect Dessert for a summer time',
+    SizedBox(height: 10,),
+    Text('This chocolate overnight oats recipe is considered healthy because it is loaded with fiber and protein. The perfect staple for breakfast! Oats also contain natural minerals. Perfect Dessert for a summer time',
     style: TextStyle(color: Colors.black45,
     fontSize: 13.0,
     ),
@@ -147,7 +148,7 @@ class _Recipe1State extends State<Recipe1> {
     return Wrap(
       spacing: 3.0,
       children: List.generate(2, (int index) {
-        return Chip(label: Text('Amazing Food ${index+1}'),
+        return Chip(label: Text('Homemade ${index+1}'),
         avatar: Icon(Icons.dining,
         color: Colors.black,
         ),
@@ -160,112 +161,145 @@ class _Recipe1State extends State<Recipe1> {
       ),
     );
   }
-  Wrap  _tag2(){
-    return Wrap(
-      spacing: 3.0,
-      children: List.generate(1, (int index) {
-        return Chip(label: Text('Mouthwatering ${index+1}'),
-        avatar: Icon(Icons.dining,
-        color: Colors.black,
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0),
-        side: BorderSide(color: Colors.grey),
-        ),
-        backgroundColor: Colors.grey.shade100,
-        );
-      }
-      ),
-    );
-  }
+  // Wrap  _tag2(){
+  //   return Wrap(
+  //     spacing: 3.0,
+  //     children: List.generate(1, (int index) {
+  //       return Chip(label: Text('Mouthwatering ${index+1}'),
+  //       avatar: Icon(Icons.dining,
+  //       color: Colors.black,
+  //       ),
+  //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0),
+  //       side: BorderSide(color: Colors.grey),
+  //       ),
+  //       backgroundColor: Colors.grey.shade100,
+  //       );
+  //     }
+  //     ),
+  //   );
+  // }
   // Column _ingredients(){
-  //   // SizedBox(
-  //   //   height: 10,
-  //   // ),
-  //   Text(
-  //      recipeModel.cookingTime.toString() + '\'',
-  //   ),
-
+  //   Icon(Icons.timer);
+  //    Text("Cooking time: Overnight (8 hours)");
   // }
 
-  
+   Column _ingredients(){
+    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+ 
+    //   Divider(),
+    // Text('Orthopedic assessment',
+    // style: TextStyle(color: Colors.black45,
+    // fontSize: 17.0,
+    // ),
+    // ),
+    // Row(
+    //    children: [
+    //       Container(
+    //          width: MediaQuery.of(context).size.width -40,
+    //           child: Text(
+    //           "Cafe - Assorted Coffees & Teas - Breakfast and Brunch",
+    //             style: TextStyle(fontSize: 13, height: 1.3),
+    //                     ),
+    //                   )
+    //                 ],
+    //               ),
+
+    ListTile(
+      leading: Icon(Icons.timer),
+      title: Text('Cooking Time Required : Overnight (At least 4 Hours)',
+      style: TextStyle(color: Colors.black45,
+      fontSize: 13.0,
+      ),
+      ),
+    ),
+    // Text('Cooking Time Required : Overnight (8 Hours)',
+    // style: TextStyle(color: Colors.black45,
+    // fontSize: 13.0,
+    //   ),
+    // ),
+    Text("Ingredients: ",
+    style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+    ),
+     ListTile(
+       leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('oats (I used old-fashioned roll oats)',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+     ListTile(
+        leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('cacao powder (you can also use cocoa powder)',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+    ListTile(
+       leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('non-dairy milk (you can use cashew, oats, hemp, almond, coconut, soy, or macadamia nut milk)',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+    ListTile(
+       leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('yogurt (either Greek or coconut yogurt can be used for this recipe. To keep things vegan, you can use coconut or any other non-dairy yogurt)',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+    ListTile(
+       leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('vanilla extract, chia seeds and fruits',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+    ListTile(
+       leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('maple syrup or honey if not vegan',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+    ListTile(
+       leading: Icon(Icons.fiber_manual_record,
+       size: 10,
+       ),
+      title: Text('dark chocolate chips (or chopped dark sugar-free chocolate)- to make this vegan, use dairy-free chocolate chips',
+      style: TextStyle(color: Colors.black45,
+    fontSize: 13.0,
+      ),
+      ),
+    ),
+
+
+    ],
+    );
+  }
 
 
 
-  // Row _favourites(){
-  //   return Row(crossAxisAlignment: CrossAxisAlignment.start,
-  //   children: <Widget>[Column(crossAxisAlignment: CrossAxisAlignment.start,
-  //   children: <Widget>[Icon(Icons.check_box,
-  //   color: Colors.deepPurpleAccent,
-  //   )],
-  //   ),
-  //   SizedBox(width: 16.0),
-  //   Column(crossAxisAlignment: CrossAxisAlignment.start,
-  //   children: <Widget>[
-  //     Row(children: <Widget>[
-  //       Text('Appointment Booked', style: TextStyle(color: Colors.deepPurpleAccent),),
-  //     ],),
-  //   ],)
-  //   ],
-  //   );
-  // }
 
-
-  // Row _images(){
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //     crossAxisAlignment: CrossAxisAlignment.start,
-  //     children: <Widget>[CircleAvatar(backgroundImage: AssetImage('images/annenygard.jpg'),
-  //     radius: 40.0,
-  //     ),
-  //     CircleAvatar(backgroundImage: AssetImage('images/annenygard2.jpg'),
-  //      radius: 40.0,
-  //     ),
-  //     CircleAvatar(backgroundImage: AssetImage('images/tomclaes.jpg'),
-  //      radius: 40.0,
-  //     ),
-   
-  //     SizedBox(
-  //       width:100.0,
-  //     ),
-  //     ],
-  //   );
-  // }
-
- }
-
-// class Recipe1 extends StatelessWidget {
-  
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SlidingUpPanel(
-//         parallaxEnabled: true,
-//         borderRadius: BorderRadius.only(
-//           topLeft: Radius.circular(24),
-//           topRight: Radius.circular(24),
-//         ),
-//         padding: EdgeInsets.symmetric(
-//           horizontal: 12,
-//         ),
-//          minHeight: (size.height / 2),
-//         maxHeight: size.height / 1.2,
-//         panel: Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Center(
-//                 child: Container(
-//                   height: 5,
-//                   width: 40,
-//                   decoration: BoxDecoration(
-//                     color: Colors.black.withOpacity(0.3),
-//                     borderRadius: BorderRadius.circular(12),
-//                   ),
-//                 ),
-//               ),
-//       ),
-//     );
-//   }
-// }
+}
