@@ -28,7 +28,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-   return GetMaterialApp(debugShowCheckedModeBanner: false, home: Recipe1());
+   return GetMaterialApp(debugShowCheckedModeBanner: false, home: StartScreen());
    //return GetMaterialApp(debugShowCheckedModeBanner: false, home: RecipeList());
   }
 }
