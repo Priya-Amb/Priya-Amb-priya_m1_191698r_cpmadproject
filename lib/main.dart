@@ -13,6 +13,9 @@ import 'package:priya_m1_191698r_cpmadproject/screens/showreviews.dart';
 import 'package:priya_m1_191698r_cpmadproject/screens/start.dart';
 import 'package:priya_m1_191698r_cpmadproject/w_jsonparser.dart';
 import 'package:get/get.dart';
+import 'package:flutter/widgets.dart';
+import 'package:meta/meta.dart';
+import 'package:flutter/src/widgets/text.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
